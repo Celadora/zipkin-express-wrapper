@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/Celadora/zipkin-express-wrapper/issues"
   },
-  "homepage": "https://github.com/Celadora/zipkin-express-wrapper#readme"
+  "homepage": "https://github.com/Celadora/zipkin-express-wrapper#readme",
+  "dependencies": {
+    "zipkin": "^0.7.1",
+    "zipkin-instrumentation-express": "^0.7.1",
+    "zipkin-transport-http": "^0.7.1"
+  }
 }
