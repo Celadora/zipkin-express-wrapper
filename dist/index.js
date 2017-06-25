@@ -23,7 +23,7 @@ var middleware = zipkinMiddleware({
   port: config.get('port')
 });
 
-var traceId, parentId, spandId;
+var traceId, parentId;
 
 module.exports = {
   middleware: function(req, res, next) {
@@ -38,8 +38,8 @@ module.exports = {
   setHeaders: function(req) {
 
 
-    req.headers["X-B3-TraceId"] = traceId;
-    req.headers["X-B3-ParentSpanId"] = parentId;
+    if(traceId) req.headers["X-B3-TraceId"] = traceId;
+    if(parentId) req.headers["X-B3-ParentSpanId"] = parentId;
     var childId = tracer.createChildId();
     var spanId = childId.spanId
 
